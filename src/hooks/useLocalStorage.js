@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
-const PREFIX = 'messenger '
+
+const PREFIX = 'messenger-'
+
 export default function useLocalStorage(key, intialValue) {
     const prefixedKey = PREFIX + key
     const [value, setValue] = useState(() => {

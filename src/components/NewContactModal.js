@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Button, Form, Modal } from 'react-bootstrap';
+import { Modal, Form, Button } from 'react-bootstrap';
 import { useContacts } from '../contexts/ContactsProvider';
 
 export default function NewContactModal({ closeModal }) {
@@ -9,6 +9,7 @@ export default function NewContactModal({ closeModal }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+
     createContact(idRef.current.value, nameRef.current.value);
     closeModal();
   }
@@ -21,12 +22,12 @@ export default function NewContactModal({ closeModal }) {
       <Modal.Body>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
-            <Form.Label>ID</Form.Label>
-            <Form.Control type="text" ref={idRef} required />
+            <Form.Label htmlFor="id">Id</Form.Label>
+            <Form.Control type="text" id="id" ref={idRef} required />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Name</Form.Label>
-            <Form.Control type="text" ref={nameRef} required />
+            <Form.Label htmlFor="name">Name</Form.Label>
+            <Form.Control type="text" id="name" ref={nameRef} required />
           </Form.Group>
           <Button type="submit" variant="primary">
             Create

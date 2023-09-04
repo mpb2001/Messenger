@@ -18,8 +18,8 @@ export default function Login({ onIdSubmit }) {
         <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: '100vh' }}>
             <Form onSubmit={handleSubmit} className="w-100">
                 <Form.Group className="mb-3">
-                    <Form.Label>Enter Your ID</Form.Label>
-                    <Form.Control type="text" ref={idRef} required />
+                    <Form.Label htmlFor="id">Enter Your ID</Form.Label>
+                    <Form.Control type="text" id="id" ref={idRef} required />
                 </Form.Group>
                 <Button type="submit" className="me-2">
                     Login
